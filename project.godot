@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Object",
+"class": "player_ship_class",
+"language": "GDScript",
+"path": "res://classes/player_ship.gd"
+}, {
+"base": "Object",
 "class": "ship_class",
 "language": "GDScript",
 "path": "res://classes/ship.gd"
 } ]
 _global_script_class_icons={
+"player_ship_class": "",
 "ship_class": ""
 }
 
@@ -27,7 +33,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://singletons/Globals.gd"
-ShipManager="*res://singletons/ShipManager.gd"
 Multiplayer="*res://singletons/Multiplayer.gd"
 
 [physics]
