@@ -4,6 +4,13 @@ var idd
 
 
 func _process(delta):
-	rotation = position.angle_to_point(Vector2(1000,1000))
-	position = position.move_toward( Vector2(1000,1000), 1)
+	if Input.is_action_pressed("move_forward"):
+		position.x -= cos(rotation)*10
+		position.y -= sin(rotation)*10
+	if Input.is_action_pressed("rotate_left"):
+		rotation-=0.05
+	if Input.is_action_pressed("rotate_right"):
+		rotation+=0.05
+	
+	
 	Multiplayer.rpc_unreliable_id(Multiplayer.server_peer, "playership_update", idd, position, rotation)
